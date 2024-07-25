@@ -144,9 +144,157 @@ fruit1 = ["apple", "cherry", "banana", "orange", "plum"]
 # print(fruit1[1:4])
 # print(fruit1[:4])
 # print(fruit1[4:])
-print(fruit1)
-print(fruit1[::2])
+# print(fruit1)
+# print(fruit1[::2])
 fruit3 = fruit1[::1]
-print(fruit3 is fruit1)
-print(id(fruit1))
-print(id(fruit3))
+# print(fruit3 is fruit1)
+# print(fruit3 == fruit1)
+# print(id(fruit1))
+# print(id(fruit3))
+
+# fruit4 = fruit1[:]
+# print(fruit4 is fruit1)
+# print(fruit4 == fruit1)
+# fruit5 = fruit1
+# print(fruit5 is fruit1)
+# print(fruit5 == fruit1)
+
+# st = "Hello world"
+# ls = list(st)
+# print(ls)
+# ls2 = st.split()
+# print(ls2)
+
+# sl = slice(2, -1)
+# print(fruit1[sl])
+
+# ws1 = "https://google.com"
+# ws2 = "https://facebook.com"
+# ws3 = "https://cnn.com"
+# ws4 = "https://bbc.com"
+# domain = slice(8, -4)
+# print(ws1[domain])
+# sites = [ws1, ws2, ws3, ws4]
+# for i in sites:
+#     print(i[domain])
+#
+# print(type(domain))
+# print(domain)
+
+# print(fruit1)
+# print(id(fruit1))
+# fruit1[2] = "melon"
+# print(fruit1)
+# print(id(fruit1))
+# name = "Alexander"
+# print(id(name))
+# name = "alexander"
+# print(id(name))
+
+# print(fruit1)
+#
+# fruit1[1:3] = ["melon", "cherry"]
+# print(fruit1)
+#
+# fruit1[1:2] = ["watermelon", "kiwi"]
+# print(fruit1)
+
+# fruit1[1:3] = ["banana"]
+# print(fruit1)
+#
+# fruit1.insert(2, "kiwi")
+# print(fruit1)
+
+# fruit1.append("papaya")
+# print(fruit1)
+
+tropical = ["papaya", "pineapple", "kiwi", "mango"]
+# fruit1.extend(tropical)
+# print(fruit1)
+
+tropical.extend(fruit1)
+# print(tropical)
+#
+# tropical.remove("mango")
+# print(tropical)
+
+# tropical.pop(0)
+# print(tropical)
+# print(id(tropical))
+# for i in tropical:
+#     if "kiwi" == i:
+#         tropical.remove("kiwi")
+# print(tropical)
+
+# del tropical[0]
+# print(tropical)
+
+#tropical.clear()
+# print(tropical)
+# print(id(tropical))
+# tropical.append([1, 2, [3, 4]])
+# print(tropical)
+# # tropical[6][2].clear()
+# del tropical[6][2]
+# print(tropical)
+
+# print(fruit1)
+# newfruit = [] # put in this list all fruits from fruits1 that have "a" in the name
+# for x in fruit1:
+#     if "a" in x:
+#         newfruit.append(x)
+# print(newfruit)
+#
+# new = [x for x in fruit1 if "a" in x]
+# print(new)
+#
+# new1 = [x for x in fruit1]
+# print(new1)
+
+# newlist = [x for x in range(50)]
+# print(newlist)
+
+# a = [x**2 for x in range(1,11)]
+# print(a)
+
+# b = [x for x in range(21) if x % 2 == 0]
+# print(b)
+
+print(fruit1)
+# newfruit = [x.upper() for x in fruit1]
+# print(newfruit)
+
+# new1 = ["hello" for x in fruit1]
+# print(new1)
+
+# new2 = [("Hello "+x) for x in fruit1]
+# new2 = [f"Hello {x}" for x in fruit1]
+# print(new2)
+
+# new2 = [x if x != "banana" else "melon" for x in fruit1]
+# print(new2)
+
+fruit1.sort(reverse=True)
+# print(fruit1)
+# print(sorted(fruit1))
+# print(fruit1)
+# fruit1.reverse()
+# print(fruit1)
+# print(fruit1[::-1])
+
+fruit_copy = fruit1.copy()
+# print(fruit_copy == fruit1)
+# print(fruit_copy is fruit1)
+
+# lst1 = ["a", "b", "c"]
+# lst2 = [1, 2, 3]
+# lst3 = lst1 + lst2
+# print(lst3)
+# lst4 = lst2 + lst1
+# print(lst4)
+# print(lst1)
+
+# lst = fruit1 + tropical
+# print(lst)
+# cnt = lst.count("cherry")
+# print(cnt)
