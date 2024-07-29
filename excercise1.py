@@ -298,3 +298,149 @@ fruit_copy = fruit1.copy()
 # print(lst)
 # cnt = lst.count("cherry")
 # print(cnt)
+
+# Pascal triangle
+
+# x = int(input("enter the size of triangle, not to big: "))
+# pascal = []
+# for i in range(x):
+#     pascal.append([1] + [0]*x)
+# #print(pascal)
+#
+# for i in range(1,x):
+#     for j in range(1, i + 1):
+#         pascal [i][j] = pascal [i-1][j] + pascal [i-1][j-1]
+# #    print(pascal)
+# for i in range(x):
+#     print(" " * (x-i), end="" )
+#     for j in range(i+1):
+#         print(pascal[i][j], end=" ")
+#     print()
+#
+#
+lst = [2, 3, 4, 5, 10, 13, 17, 18, 19, 6, 11, 23, 11, 9]
+
+
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     if n <= 3:
+#         return True
+#     if n % 2 == 0 or n % 3 == 0:
+#         return False
+#     i = 5
+#     while i**2 <= n:
+#         if n % i == 0 or n % (i + 2) == 0:
+#             return False
+#         i += 6
+#     return True
+
+# for num in lst:
+#     if is_prime(num):
+#         print(num, end=", ")
+
+# print([num for num in lst if is_prime(num)])
+
+# print(lst)
+# print(*lst)
+
+# numbers = [2, 1, 3, 4, 7]
+# more_num = [*numbers, 11, 16, 34]
+# print(more_num)
+# print(*numbers)
+
+# import random
+# ls = []
+# n = 20
+# for x in range(n):
+#     ls.append(random.randint(1,100))
+# print(ls)
+#
+# cnt = 0
+# for i in range(1, len(ls) - 1):
+#     if ls[i] < ls[i - 1] and ls[i] < ls[i + 1]:
+#         cnt += 1
+# print(cnt)
+
+# print("hello")
+# id()
+
+# def hello():
+#     print("Hello world")
+#
+# # for i in range(10):
+# #     hello()
+#
+# f = hello
+# f()
+# print(type(f))
+# print(f is hello)
+
+# x2 = 5
+# def greeting(x):
+#     print(f"hello, {x}")
+#     x2 = 3
+#     #print(x2)
+# greeting("Alexander")
+# print(x2)
+
+# def hello(name="Noname"):
+#     if name == "Noname":
+#         print(f"Hello, nobody")
+#     else:
+#         print(f"Hello, {name}")
+#
+# p = hello()
+# print(p)
+
+# def max2(x, y):
+#     if x > y:
+#         return x
+#     return y
+#
+#
+# print(max2(-3, 7))
+#
+#
+# def max3(x, y, z):
+#     return max2(y, max2(x, z))
+#
+# print(max3(0, -12, 1))
+
+# def my_country(country="Israel"):
+#     print("I am from " + country)
+#
+# my_country("Sweden")
+# my_country("Norway")
+# my_country()
+# my_country("India")
+
+
+# def myfun(x=5, y=50):
+#     print(f"x = {x}")
+#     print(f"y = {y}")
+# myfun(3, 7)
+
+# def call_child(*kids):
+#     print(f"The youngest child is {kids[-1]}")
+#     print("the list of the kids is: ")
+#     for i in kids:
+#         print(i)
+#     print(kids)
+# call_child("Emily", "Mary", "Sam", "Bob") # tuple
+
+# def my_food(food):
+#     for x in food:
+#         if isinstance(food, str):
+#             print(x, end="")
+#         else:
+#             print(x, end=", ")
+#     print()
+#
+# fruits = ["apple", "banana", "cherry"]
+# my_food(fruits)
+# veg = ("tomato", "cucumber", "potato", "corn")
+# my_food(veg)
+#
+# st = "The live is strawberry"
+# my_food(st)
