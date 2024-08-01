@@ -444,3 +444,170 @@ lst = [2, 3, 4, 5, 10, 13, 17, 18, 19, 6, 11, 23, 11, 9]
 #
 # st = "The live is strawberry"
 # my_food(st)
+# #### 31.07.2024
+# a, b, c = 1, 2, 3
+# print(a, b, c)
+#
+# a, b, *c = 1, 2
+# print(a, b, c)
+# print(c)
+
+# def test(a, b, c):
+#     print(a)
+#     print(b)
+#     print(c)
+#
+# test(c=1, a=8, b=3)
+
+# def greet(greeting, *names, **emotions):  # *args  **kwargs
+#     for n in names:
+#         message = f"{greeting}, {n}! "
+#         if "mood" in emotions:
+#             message += f"You fill {emotions["mood"]}. "
+#         if "look" in emotions:
+#             message += f"You is very {emotions["look"]}."
+#         print(message)
+#
+# greet("Hello","Alexander", "Kate", "Viki", mood="happy", look="beautiful" )
+# greet("Hello", "John", "Mary")
+#
+# for i in "Alex", "Michael", "Andrew":
+#     print(i)
+
+# lst = [-4, 0, 10, 4, 5, 13, 30,38, 59, 1, 21, 15]
+#
+# def avg(iter):
+#     summ = 0
+#     for i in iter:
+#         summ += i
+#     return summ / len(iter)
+#
+# print(avg(lst))
+
+
+# number = 30000
+# def prime_fast(num):
+#     """Проверяет, является ли число простым."""
+#     if num <= 1:
+#         return False
+#     if num <= 3:
+#         return True
+#     if num % 2 == 0 or num % 3 == 0:
+#         return False
+#     i = 5
+#     while i * i <= num:
+#         if num % i == 0 or num % (i + 2) == 0:
+#             return False
+#         i += 6
+#     return True
+#
+# def list_of_primes_fast(num):
+#     ls = []
+#     for i in range(1,num+1):
+#         if prime_fast(i):
+#             ls.append(i)
+#     return ls
+#
+# def prime_classic(num):
+#     flag = False
+#     if num == 1:
+#         return False
+#     elif num > 1:
+#         for i in range(2, num):
+#             if (num % i) == 0:
+#                 flag = True
+#                 break
+#         if flag:
+#             return False
+#         return True
+#
+# def list_of_primes_classic(num):
+#     ls = []
+#     for i in range(1,num+1):
+#         if prime_classic(i):
+#             ls.append(i)
+#     return ls
+#
+# import datetime
+#
+# start = datetime.datetime.now()
+# list_of_primes_fast(number)
+# stop = datetime.datetime.now()
+# print(f" Fast algorithm: {stop - start}")
+#
+# start = datetime.datetime.now()
+# list_of_primes_classic(number)
+# stop = datetime.datetime.now()
+# print(f" Classic algorithm: {stop - start}")
+
+# import math
+# from math import *
+# from math import sqrt, pow
+# #print(dir(math))
+# print(sqrt(9))
+# print(pow(2,3))
+
+# import factorial
+# print(factorial.fact(900))
+
+# def greet():
+#     print("Hello, world!")
+
+# greet = lambda : print("Hello, world!")
+# greet()
+
+# greet_user = lambda name : print(f"Hi there,{name}")
+#
+# greet_user("Alexander")
+
+# (lambda name:print(f"Hi there,{name}")) ("John")
+
+# x = lambda x: x+1
+# print(x(5))
+
+# print((lambda x: x**2) (3))
+# x = "Hello world"
+# lst = [5, 14, (lambda x: x**2) (len(x)), "Hello"]
+# print(lst)
+
+lst = [2, 5, 6, 76, 45, 36, 32, 55, -3, 0]
+
+# def get_filter(a, filter=None):
+#     if filter is None:
+#         return a
+#     res = []
+#     for x in a:
+#         if filter(x):
+#             res.append(x)
+#     return res
+#
+# even = get_filter(lst, lambda x: x % 2 == 0)
+# print(even)
+# pos = get_filter(lst, lambda x: x > 0)
+# print(pos)
+# import sys, math
+lst = [2, 5, 6, 76, -45, 36, 32, 55, -3, 0, 13, 43]
+# n = map(lambda x: x*x, lst)
+# print(list(map(lambda x: x*x, lst)))
+# print(m)
+# print(list(m))
+# print(sys.getsizeof(m))
+# print(sys.getsizeof(lst))
+# lst = [2, 5, 6, 76, 45, 36, 32, 55, -3, 0]
+# print(lst)
+# mult3 = filter(lambda x: x % 2 == 0, lst)
+# print(mult3)
+# print(list(mult3))
+# new_lst = (lambda x: x*x,)
+
+# def func(var):
+#     letter = ["a", "e", "i", "o", "u"]
+#     if var in letter:
+#         return True
+#     return False
+# letter = ["a", "e", "i", "o", "u"]
+# txt = "Hello, world, you are beautiful"
+#
+# func = lambda var:var in letter
+# filt = filter(func, txt)
+# print(list(filt))
