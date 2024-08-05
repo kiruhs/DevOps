@@ -611,3 +611,124 @@ lst = [2, 5, 6, 76, -45, 36, 32, 55, -3, 0, 13, 43]
 # func = lambda var:var in letter
 # filt = filter(func, txt)
 # print(list(filt))
+
+#================================
+
+# seq = [0, 1, 2, 3, 4, 5, 8, 13]
+#
+# even = filter(lambda x: x % 2 == 0, seq)
+# print(list(even))
+# odd = filter(lambda x: x % 2 != 0, seq)
+# print(list(odd))
+
+# lst = [[1, 's', 2], [3, 'a', 1], [-2, 'W', 0]]
+# print(sorted(lst))
+# print(sorted(lst, key=lambda lst: lst[2]))
+
+# str1 = "We very happy to meet the neighbours and congratulate them with a ne year"
+# lst_str = str1.split()
+# print(lst_str)
+# # print(sorted(lst_str, key=lambda lst_str: len(lst_str)))
+# print(int(sum(list(map(len, lst_str)))/len(lst_str)))
+
+# t = (3,13,32,-3)
+# print(type(t))
+# print(len(t))
+# print(t[2])
+
+# t2 = (3, "Hello", [2, 5, True], 7)
+# print(t2)
+# print(id(t2))
+# # print(type(t2))
+# # print(len(t2))
+# print(id(t2[2]))
+# t2[2][2] = False
+# print(t2)
+# print(id(t2))
+# t2[2].append(199)
+# print(t2)
+# t2[2].clear()
+# print(t2)
+# print(id(t2[2]))
+
+# lst = [1, 2, 3]
+# fruits = tuple(("apple", "banana", "lemon"))
+# tp = tuple(lst)
+# print(tp)
+# print(fruits)
+
+# n = "Hello Israel"
+# n = tuple(n)
+# print(n)
+# print(n[3:8:2])
+
+# fruits = ("apple", "banana", "cherry")
+# print(type(fruits))
+# (green, yellow, red) = fruits
+# print(green, red)
+
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+# print(type(fruits))
+# (green, yellow, *red) = fruits
+
+# for x in fruits:
+#     print(x)
+
+# for i in range(len(fruits)):
+#     print(fruits[i])
+#
+# tpl1 = ('a', 'b', 'c')
+# tpl2 = (1, 3, 6, 9)
+# tpl3 = tpl1 + tpl2
+# tpl1 *= 2
+# print(tpl1)
+
+# tpl = (1, 3, 4, 7, 8 ,5, 4, 6, 8, 5)
+# x = tpl[6:].index(4)
+# print(x)
+#
+# x = tpl.count(9)
+# print(x)
+
+# lst = [x**2 for x in range(1,11)]
+# print(lst)
+# print(lst.__sizeof__())
+# tup = tuple(x**2 for x in range(1,11))
+# print(tup)
+# print(tup.__sizeof__())
+
+# lst = [(4, 5), (2, 3), (6, 7), (2, 8)]
+# print(lst)
+# ln = len(lst)
+# for i in range(ln):
+#     for j in range(ln -i -1):
+#         if lst[j][0] + lst[j][1] > lst[j+1][0] + lst[j+1][1]:
+#             lst[j], lst[j+1] = lst[j+1], lst[j]
+#
+# print("\nThe answer is ")
+# print(lst)
+
+# import datetime
+#
+# l = list(range(80_000_001))
+# t = tuple(range(80_000_001))
+# # print(l)
+# # print(t)
+# # print(l.__sizeof__())
+# # print(t.__sizeof__())
+#
+# start = datetime.datetime.now()
+# for i in range(len(t)):
+#     a = t[i]
+# end = datetime.datetime.now()
+# print(end - start)
+#
+# start = datetime.datetime.now()
+# for i in range(len(l)):
+#     a = l[i]
+# end = datetime.datetime.now()
+# print(end - start)
+
+set1 = {2, 3, 2, 3, 4, 3, 3, 2, True, 4.3 , 5, 1, 0, 0, 0, "Hello", (1, 3, 5), [3, 4,5]}
+print(set1)
+# print(set1[2])
