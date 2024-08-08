@@ -732,3 +732,130 @@ fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
 set1 = {2, 3, 2, 3, 4, 3, 3, 2, True, 4.3 , 5, 1, 0, 0, 0, "Hello", (1, 3, 5), [3, 4,5]}
 print(set1)
 # print(set1[2])
+
+# 07/07/2024
+
+# set2 = {3,7, *[5,6, 1]}
+# print(set2)
+# set3 = {3,7, *[5,6], *{7, True, "abc"}}
+# print(set3)
+#
+# set4 = {*["a","b","c","d","e"]}
+# print(set4)
+
+# string1 = "abracadabra"
+# set1 = set(string1)
+# print(set1)
+# string2 = "/".join(set1)
+# print(string2)
+
+# thisset = {"apple", "banana", "cherry"}
+# # print(len(thisset))
+# print("apple" in thisset)
+#
+# print(thisset)
+# for x in thisset:
+#     print(x)
+
+# s = {4, 3, 7, True, -6, 23, 6, 5, print(5)}
+# print(max(s))
+# print(min(s))
+# print(sum(s))
+# print(all(s))
+# print(any(s))
+# print(s)
+# print(id(s))
+# s.add(10)
+# print(id(s))
+# print(s)
+# for i in range(1,11):
+#     s.add(i)
+# {s.add(i) for i in range(1,15)}
+# print(s)
+# {lambda s: s.add(i) for i in range(100,105)}
+# print(s)
+# s2 = {4, 5, 7, -100, -200, -300}
+# s3 = {4, 5, 7, 5, 7, 7, 0, -4, -45}
+# print(s2.issubset(s3))
+# print(s2.issuperset(s3))
+# print(s2 <= s3 <= s2)
+# print(s3)
+# print(sorted(s3))
+# s3.update(s2)
+# print(s3)
+# s3.update(list(range(30,40)))
+# print(s3)
+# s3 |= s2
+# print(s3)
+
+# s3.remove(-300)
+# print(s3)
+# s3.discard(-300)
+# print(s3)
+# s3.discard(-200)
+# print(s3)
+# print(s3.pop())
+# print(s3)
+# print(s3.pop())
+# print(s3)
+
+# print(id(s3))
+#print(s3.clear())
+# print(s3)
+#del s3
+#print(s3)
+# print(f"s2= {s2}")
+#s5 = s3.union(s2)
+# print(s5)
+
+#s5 = s2.intersection(s3)
+# s5 = s2 & s3
+# print(s5)
+# s6 = s2.difference(s3)
+# print(s6)
+# s7 = s3.difference(s2)
+#s7 = s3 - s2
+#print(s7)
+# print(s3)
+# s3.difference_update(s2)
+# s3.intersection_update(s2)
+# print(s3)
+# s5 = s3.symmetric_difference(s2)
+# s5 = s3 ^ s2
+# print(s5)
+# s3.symmetric_difference_update(s2)
+# print(f"s3= {s3}")
+# s3 ^= s2
+# print(s3)
+# s3 = frozenset(s3)
+# print(s3)
+# s5 = s3.difference(s2)
+# print(s5)
+# s3 = set(s3)
+
+from time import perf_counter_ns
+# number = 20_000_000
+# search = 19_999_000
+# from factorial import measure
+#
+# st = set(range(1, number+1))
+# ls = list(range(1, number+1))
+#
+# print(measure(st,search))
+# print(measure(ls,search))
+
+size =1
+# for i in range(size + 1):
+#     print(" "*(size-i), "* " * i, end="")
+#     print()
+
+# for i in range(1, size+1):
+#     if i == 1:
+#         print(" "* (size-i-1), "* ", end="")
+#     elif i == size:
+#         print("* "*i, end="")
+#     elif i == 2:
+#         print(" "*(size-i-1), "* *", end="")
+#     else:
+#         print(" "*(size-i-1), "*"," "*(2*i-5), "* ", end="")
+#     print()
