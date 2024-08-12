@@ -859,3 +859,147 @@ size =1
 #     else:
 #         print(" "*(size-i-1), "*"," "*(2*i-5), "* ", end="")
 #     print()
+
+# 11.07.2024
+
+# Dictionaries -
+
+mydict = {'brand': 'Ford', 'color': 'blue'}
+# print(type(mydict))
+mydict['model'] = 'Mustang'
+# print(mydict)
+# print(id(mydict))
+# mydict['color'] = 'red'
+# print(mydict)
+# mydict.update({'year': 1980})
+# mydict.update({True: True})
+# print(mydict)
+# mydict.update({(1,2,3): [1, 2,[3,[4,{5,6,(6,9, True)}]]]})
+# print(mydict)
+
+# person = dict(name='John', age=40, country='Ireland')
+# print(person)
+# prs = dict([(2, 4), (6, 8)])
+# print(prs)
+# print(len(person))
+
+# print(person['age'])
+# print(person.keys())
+#
+# print(person.values())
+#
+# print(person.items())
+#
+# for i,j in person.items():
+#     print(j, i, sep= ' = ')
+
+# print(person.pop('age'))
+# print(person)
+#
+# print(person.popitem())
+# print(person)
+
+# del person['name']
+# print(person)
+
+# lst = [1,2,3,4]
+# del lst[1]
+# print(lst)
+
+# person.clear()
+# del person
+# print(person)
+# print(id(person))
+# person2 = person.copy()
+# print(id(person2))
+# person4 = person
+# print(id(person4))
+# x = tuple("str")
+# y = tuple(x)
+# print(x is y)
+#
+# person2 = dict(person)
+# print(person2 is person)
+
+# family = {
+#     'child1': {
+#         'name': 'John',
+#         'age': 10
+#     },
+#     'child2': {
+#         'name': 'Mary',
+#         'age': 7
+#     },
+#     'child3': {
+#         'name': 'David',
+#         'age': 3,
+#         'isYounger': True
+#     }
+# }
+# import pprint
+
+# pprint.pprint(family)
+# family['child3']['name'] = 33
+# print(family['child3']['name'])
+
+# x = {'day1', 'day2', 'day3'}
+# newdict = dict.fromkeys(x)
+# print(newdict)
+# newdict['day1'] = 1000
+# print(newdict)
+
+# print(mydict)
+#
+# x = mydict.setdefault("year", 1965)
+# print(x)
+# mydict.setdefault("year", 1985)
+# print(mydict)
+
+# keys = ('a', 'b', 'c', 'd')
+# values = (1, 2, 3, 4, 5)
+#
+# # method 1: zip - function
+# new_dict = dict(zip(keys, values))
+# print(new_dict)
+#
+# # Method 2 dictionary comprehension
+#
+# dict2 = {keys[i] : values[i+1] for i in range(len(keys)) }
+# print(dict2)
+
+# st = "12 31 4 53 6 7 4 90 8 7 56 3 42 0"
+# dictionary = {int(x)*3: int(x)**2 for x in st.split() if int(x) % 2 == 0}
+# print(dictionary)
+
+# string2 = "Hello, dear friends. How are you today? Hope you enjoy our lesson, have a good evening"
+#
+# def create_symbols_dict(str2):
+#     symbol_dict = {}
+#     for symbol in str2:
+#         if symbol == ' ':
+#             continue
+#         if symbol in symbol_dict:
+#             symbol_dict[symbol] += 1
+#         else:
+#             symbol_dict[symbol] = 1
+#     return symbol_dict
+#
+# result = create_symbols_dict(string2.lower())
+# print(result)
+
+# x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+# print(x)
+# print(sorted(x))
+# print(sorted(x.items()))
+# print(sorted(x.values()))
+# print({k: v for k, v in sorted(x.items(), key=lambda it: it[1])})
+#
+# print(dict(sorted(x.items(), key=lambda it: it[1])))
+
+my_dict = {'a': 2, 'b': 3}
+def func(a, b):
+    return a + b
+print(my_dict)
+print(*my_dict)
+print(*my_dict.values())
+print(func(**my_dict))
