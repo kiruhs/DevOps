@@ -1003,3 +1003,79 @@ print(my_dict)
 print(*my_dict)
 print(*my_dict.values())
 print(func(**my_dict))
+
+# 14.08.2024
+# 1-5
+# mark = input("choose your mark (1-5): ")
+#
+# d_mark = {'1': 'Very bad!',
+#           '2': 'Not good!',
+#           '3': 'May be better',
+#           '4': 'Good work',
+#           '5': 'Perfect! You are the best!'}
+# if mark in d_mark:
+#     print(d_mark[mark])
+# else:
+#     print('Invalid choice')
+
+# words = {}
+# print("this is the dictionary that you create yourself, just enter a word")
+# print('for exit press "q" and "enter"')
+# while True:
+#     s = input("your word: ")
+#     if s == 'q':
+#         break
+#     if s in words:
+#         print(f"word {s} is translated as {words[s]}")
+#     else:
+#         print("type the translation in russian ",s)
+#         words[s] = input()
+
+# translate
+# table = {119: 103, 121: 102, 117: None} # 119 - 'w', 103 - 'g' ,121 - 'y', 102 - 'f', 117 - 'u'
+#
+# target = "weeksyourweeks"
+#
+# print("the string before translation is: ", target)
+# print("the string after translation is: ", target.translate({}))
+
+# student_list = {'S  001': ['Ma th', 'Scie nce'], 'S   002': ['Math', 'Eng lish']} # ASCII code of " " is 32
+# print(student_list)
+# print(id(student_list))
+# student_list = {x.translate({32: None}):[y[0].translate({32: None}), y[1].translate({32: None})]
+#                 for x, y in student_list.items()}
+# print(student_list)
+# print(id(student_list))
+
+# fruits = ["apple", "orange", "avocado", "kiwi", "banana"]
+# basket = ["apple", "apricot", "avocado", "kiwi", "melon"]
+#
+# new = [i for i in fruits if i in basket if i.startswith('a')]
+# print(new.__sizeof__())
+# new2 = []
+# for x in fruits:
+#     if x.startswith('a'):
+#        if x in basket:
+#            new2.append(x)
+# print(new2.__sizeof__())
+# print(new)
+# print(new2)
+# for i in fruits:
+#     for y in basket:
+#         if i == y :
+#             if i[0]=='a':
+#                 print(i)
+
+# tuple comprehension - does not exist
+# () in range from 1 to 10
+
+# lst = [i**0.5 for i in range (100000)]
+# print(lst.__sizeof__())
+#
+# gnr = tuple(float(f'{i**0.5:.3f}') if i**0.5 % 1 != 0 else int(i**0.5) for i in range (10))
+# print(gnr.__sizeof__())
+# print(gnr)
+# print(tuple(gnr).__sizeof__())
+# import pprint
+# apple_names = ['apple', 'green apple', 'pineapple']
+# pprint.pprint({i:{i: len(i) for i in apple_names} for i in apple_names})
