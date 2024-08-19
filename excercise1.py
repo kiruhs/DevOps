@@ -1079,3 +1079,140 @@ print(func(**my_dict))
 # import pprint
 # apple_names = ['apple', 'green apple', 'pineapple']
 # pprint.pprint({i:{i: len(i) for i in apple_names} for i in apple_names})
+
+# 18.08.2024
+
+# [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+# {'yellow': [1, 3], 'blue': [2, 4], 'red': [1]}
+# colors = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+# def grouping(col):
+#     result = {}
+#     for k, v in col:
+#         result.setdefault(k, []).append(v)
+#     return result
+#
+#
+# dct_grp = grouping(colors)
+# print(dct_grp)
+
+# dictionary = {'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+# # {'C1': [], 'C2': [], 'C3': []}
+# #
+# def clr(dct):
+#     for key in dct:
+#         # print(key)
+#         dct[key].clear()
+#     return dct
+
+# print(clr(dictionary))
+# original_dict = {'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+# dict = {x: y.clear() for x,y in original_dict.items()}
+# print(dict)
+
+# dct = {'a': 1, 'b': {'c': {'d': {}}}}
+
+# map
+# dep = 1
+# def dict_depth(d):
+#     global dep
+#     for v in d.values():
+#         if isinstance(v, dict):
+#             dep += 1
+#             return dict_depth(v)
+#     return dep
+#
+#
+# print(dict_depth(dct))
+
+
+
+# Homework3
+# print()
+# print('Homework 3')
+# original_dict = {'a': 1, 'b': {'c': {'d': {}}}}
+# count_dict = original_dict.copy()
+# count = 0
+#
+# while count_dict != {}:
+#     count += len(count_dict.keys())
+#     for key in count_dict.keys():
+#
+#         if isinstance(count_dict[key], dict):
+#             count_dict = count_dict[key]
+# print('The deep of the dictionary is: ', count)
+
+#lst = [30, 10, 15, 20, 30, 40, 50, 30, 30, 20, 1, 2, 3, 4, 5, 0, 20]
+# lst = [30, 20, 80, 40, 50, 30, 30, 20, 1, 2, 3, 4, 5, 10, 20]
+#
+# def count_increase(a):
+#     count = 1
+#     countlist = []
+#     for i in range(len(a) - 1):
+#         if a[i] < a[i + 1]:
+#             count = count + 1
+#         else:
+#             countlist.append(count)
+#             count = 1
+#     return max(countlist)
+#
+#
+# print('Length of the longest increasing sub-sequence:-', count_increase(lst))
+
+# def myFish(guppies, zebras, bettas):
+#     print(f"I have {guppies} guppy fish")
+#     print(f"I have {zebras} zebra fish")
+#     print(f"I have {bettas} betta fish")
+
+
+# fish = {'guppies': 2, 'zebras': 5, 'bettas': 10, 'salmon': 12, 'tuna': 8, 'shark': 2}
+#
+# def myFish(**fish):
+#     for key, value in fish.items():
+#         print(f"I have {value} {key}")
+#
+# myFish(**fish)
+
+# st = {i*i for i in range(1,11) if i != 5 and i*i % 10 in (1, 4, 9)}
+# print(st)
+# orig = 'aeiou'
+# crypto = '12345'
+# table = str.maketrans(orig,crypto)
+# # print(table)
+# text = "this is a test"
+# encrypted_text = text.translate(table)
+# print(encrypted_text)
+# table2 = str.maketrans(crypto, orig)
+# decrypted_text = text.translate(table2)
+# print(decrypted_text)
+
+dict1 = {'a': 10, 'b': 20, 'c': 30, 'w': 120}
+dict2 = {'a': 5, 'b': 15, 'd': 25, 'Hello': 5}
+# # dict3 = {}
+# # {k: v for k,v in dict1 if k}
+# # for k,v in dict1.items():
+# #     dict3[k] = v
+# dict3 = dict1.copy()
+# for k, v in dict2.items():
+#     if k in dict3:
+#         dict3[k] += v
+#     else:
+#         dict3[k] = v
+#
+
+# from collections import Counter
+# dict3 = Counter(dict1) + Counter(dict2)
+# print(dict(dict3))
+
+# coord = {'x': 2, 'y': 0, 'z': 1}
+# tpl = (2, 0, 1)
+# coord2 = {k: k*k for k in range(1_000_000)}
+# tpl2 = tuple(k*k for k in range(1_000_000))
+# print(hash(tpl2))
+# tpl2 = (1,3)
+# print(hash(tpl2))
+# tpl2 = (1,3.1)
+# print(hash(tpl2))
+
+# print(coord2)
+# print(coord2.__sizeof__())
+# print(tpl2.__sizeof__())
