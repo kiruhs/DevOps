@@ -1216,3 +1216,133 @@ dict2 = {'a': 5, 'b': 15, 'd': 25, 'Hello': 5}
 # print(coord2)
 # print(coord2.__sizeof__())
 # print(tpl2.__sizeof__())
+
+# 21.08.2024
+
+
+# dict5 = {'a': 5, 'b': 32, 'c': 10}
+#
+# rev_dict = {k: v for v, k in dict5.items()}
+# print(rev_dict)
+#
+# lst = [1, 2, 3, 4]
+#
+# new_dict = current = {}
+# print(id(new_dict))
+# print(id(current))
+# for num in lst:
+#     current[num] = {}
+#     print(f"current before {id(current)}")
+#     current = current[num]
+#     print(f"current after {id(current)}")
+#     # print(current)
+#     # print(id(current))
+#     print(new_dict)
+#     # print(id(new_dict))
+# # print(new_dict)
+
+# Z
+# size = 7
+# for sym in range(size):
+#     if sym == size - 1 or sym == 0:
+#         print('*' * size)
+#     else:
+#         print(' ' * (size - sym - 2), '*')
+
+# 1
+# 22
+# 333
+
+# print(str((i)*i+'\n' for i in range(1,10)), sep="")
+# for i in range(1,10): print(str(i)*i)
+
+# lst = [1, 2, 3, 1, 2, 4, 5, 6, 3, 7, 5, 6, 4, 8, 7, 8]
+#
+# def first_non_repeated(l):
+#     cnt = {}
+#     for i in l:
+#         if i in cnt:
+#             cnt[i] += 1
+#         else:
+#             cnt[i] = 1
+#
+#     for i in l:
+#         if cnt[i] == 1:
+#             return i
+
+# print(first_non_repeated(lst))
+
+# marks = (98, 80, 85, 100)
+# print(marks[2])
+
+from collections import namedtuple
+
+# Marks = namedtuple('Marks', 'Physics Chemistry Math English')
+# #print(Marks)
+# marks1 = Marks(98, 80, 85, 100)
+# print(marks1)
+# mrc_t = (98, 80, 85, 100)
+# mrc_names_t = ('Physics', 'Chemistry', 'Math', 'English')
+# dct = {'Physics': 98, 'Chemistry': 80, 'Math': 85, 'English':100}
+# print(dct)
+#
+# print(marks1.__sizeof__())
+# print(dct.__sizeof__())
+# print(mrc_t.__sizeof__() + mrc_names_t.__sizeof__())
+# t_t = (('Physics', 98), ('Chemistry', 80), ('Math', 85), ('English',100))
+# print(t_t.__sizeof__())
+
+# Marks_d = namedtuple('Marks2', dct)
+# # print(Marks_d(**dct))
+#
+# marks2 = Marks_d(88, 82, 93, 79)
+# print(marks2)
+# print(marks2[2])
+# print(marks2.English)
+# print(marks1.Chemistry)
+# marks2[2] = 100  returns error due to immutable type
+
+# lst = ['Physics', 'Chemistry', 'Math', 'English']
+# Marks = namedtuple('Marks', lst)
+# lst2 = [60, 37, 82, 75]
+# marks3 = Marks._make(lst2)
+# print(marks3)
+# print(id(marks3))
+# marks3 = marks3._replace(Chemistry=99)
+# print(marks3)
+# print(id(marks3))
+
+# Student = namedtuple('Any_Student', ['name', 'age', 'marks'])
+
+# def calc_avg(student):
+#     total = sum(student.marks)  # total sum of grades
+#     avg = total/len(student.marks)
+#     return avg
+#
+#
+# student1 = Student(name='Alice', age=22, marks=[98, 92, 69])
+# print(f"Average grade of {student1.name} is {calc_avg(student1):.2f}")
+#
+#
+# from math import pow
+# print(pow(3,4))
+# print(3**4)
+
+# Person = namedtuple('AnyPerson', 'name age height')
+# person1 = Person('John', 35, 180)
+# print(person1)
+# ExtPerson = namedtuple('ExtPerson', [*Person._fields, 'weight'])
+# person2 = ExtPerson('Michael', 40, 175, 75)
+# print(person2)
+# Person = namedtuple('AnyPerson', 'name position height')
+# person1 = Person('John', 35, 180)
+# print(person1)
+# print(person2)
+
+# pers_dict = person2._asdict()
+# print(pers_dict)
+# p = "Hello, world"
+# print(globals())
+
+# for name, value in zip(person1._fields, person1):
+#     print(name, " <--> ", value)
