@@ -1346,3 +1346,147 @@ from collections import namedtuple
 
 # for name, value in zip(person1._fields, person1):
 #     print(name, " <--> ", value)
+
+# 25.08.2024
+
+# dict1 = {'c1': 'Red', 'c2': 'Green', 'c3': False}
+# print("Original dict: ", dict1)
+# dict1 = {key: value for (key, value) in dict1.items() if value}
+# print(dict1)
+#
+# marks = {'Science': [88, 89, 62, 95], 'Language': [77, 78, 84, 80], 'Math': [95, 80, 84, 79]}
+#
+# # [{'Science': 88, 'Language': 77}, {'Science': 89, 'Language': 78}, {'Science': 62, 'Language': 84}, {'Science': 95, 'Language': 80}]
+#
+# def list_of_dicts(d):
+#     # get the key (subject) from the origin dictionary
+#     keys = d.keys()
+#     values = zip(*[d[k] for k in keys])
+#  #   print(*values)
+#     result = [dict(zip(keys, v)) for v in values]
+#     return result
+#
+# # list_of_dicts(marks)
+# print(list_of_dicts(marks))
+#
+# lst1 = [1,2,3]
+# lst2 = ['a','b','c']
+# lst3 = list(zip(lst1,lst2,lst2))
+# print(lst3)
+
+nestedlist = [ [1, 2, 3], 4, ("Ten", "Twenty", "Thirty"), {4, 5}, [1.1,  1.0E1, 1+2j, 20.55], 3.142]
+# flat = []
+# for sublist in nestedlist:
+#     for element in sublist:
+#         flat.append(element)
+#
+# print(flat)
+
+# from collections.abc import Iterable
+#
+# lst2 = []
+# for sub in nestedlist:
+#     if isinstance(sub,(Iterable)):
+#         lst2.extend(sub)
+#     else:
+#         lst2.append(sub)
+#
+# print(lst2)
+
+# flat2 = [element for sublist in nestedlist for element in sublist]
+
+# print(flat2)
+
+# flow / wolf   'forty five' / 'over fifty'
+
+
+# l = [x*2 for x in range(5)]
+# print(*l)
+# print(l)
+# lt = (x*2 for x in range(5))
+# li = iter(l)
+
+# print(list(li))
+# print(list(li))
+# print(list(lt))
+# print(list(lt))
+# print(l[2])
+# print(len(l))
+# print(len(li))
+# print(li[2])
+# for i in li:
+#     print(i)
+# for i in li:
+#     print(i)
+# st = {3,7, 5, 3,8}
+# print(st)
+# print(st)
+
+
+def my_num():
+    a = 1
+    while True:
+        yield a
+        a += 4
+my = my_num()
+# print(my)
+# print(next(my))
+# print(next(my))
+# print(next(my))
+
+# print(my.__sizeof__())
+
+# def func(n):
+#     res = []
+#     cnt = 0
+#     while cnt < n:
+#         res.append(cnt)
+#         cnt += 1
+#     return res
+# ls = func(100_000_000)
+# def func2():
+#     cnt = 0
+#     while True:
+#         yield cnt
+#         cnt += 1
+# ls2 = func2()
+#
+# print(ls[1000])
+#
+# for i in range(1000):
+#     next(ls2)
+# print(next(ls2))
+
+# from math import sqrt
+#
+# sq = [sqrt(x) for x in range(1_000_000)]
+# sq_gen = (sqrt(x) for x in range(1_000_000))
+# # print(sq)
+# # print(list(sq_gen))
+# print(sq[965])
+# for i in range(965):
+#     next(sq_gen)
+# print(next(sq_gen))
+#
+# print(sq.__sizeof__())
+# print(sq_gen.__sizeof__())
+
+# map
+
+# s = "0123s567895665!72"
+# ls = []
+# for i in s:
+#     ls.append(int(i))
+# print(ls)
+# print(dir(map))
+# print(list(map(str, s)))
+
+str1 = "Hello world! The Python is the best programming language"
+# print(str1.split())
+ls = [ len(i) for i in str1.split()]
+print(ls)
+print(ls.__sizeof__())
+length = (map(len, str1.split()))
+print(list(length))
+print(length.__sizeof__())
+
