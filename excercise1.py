@@ -1490,3 +1490,149 @@ length = (map(len, str1.split()))
 print(list(length))
 print(length.__sizeof__())
 
+# 28.08.2024
+lst = ['forty five', 'evil', 'vile', 'restful', 'fluster']
+
+# def characterCounts(s):
+#     counts = {} # empty dictionary
+#     # renew the dict for ech symbol in the row
+#     for ch in s:
+#         if ch in counts:
+#             counts[ch] += 1
+#         else:
+#             counts[ch] = 1
+#     return counts
+#
+# # check if the strings are anagrams or not
+# lst2 = []
+# for st in range(len(lst)):
+#     characterCounts(lst[st])
+#     for st2 in range(1, len(lst)):
+#         if characterCounts(lst[st2]) == characterCounts(lst[st]):
+#             lst2.append(lst[st])
+#             lst2.append(lst[st2])
+#
+# print(lst2)
+
+# lst = ['forty five', 'over fifty','can', 'evil', 'vile', 'live', 'restful', 'fluster']
+#
+# def group_anagrams(strs):
+#     result = {}
+#     for s in strs:
+#         sorted_string = ''.join(sorted(s))    # here we get sorted string
+#         if sorted_string in result:
+#             result[sorted_string].append(s)
+#         else:
+#             result[sorted_string] = [s]
+#     return list(result.values())
+#
+# print(group_anagrams(lst))
+
+# el = input("Enter the symbol: ")
+#
+# def del_from_tuple(tpl, elem):
+#     if elem in '0123456789':
+#         elem = int(elem)
+#     return tuple(y for y in tpl if y != elem)
+#
+# print(del_from_tuple((1, 2, 3, 4, 4, 3, 5, 'a',3), el))
+
+
+# Student = namedtuple('Student', 'name age mark city')
+# students = (
+#    Student('David', '23', 71, 'New York'),
+#    Student('Mark', '21', 79, 'LA'),
+#    Student('Elizabeth', '24', 91, 'Denver'),
+#    Student('Robert', '22', 72, 'Chicago'),
+#    Student('Samantha', '21', 61, 'Boston'),
+#    Student('Jack', '21', 87, 'Cleveland'),
+#    Student('Arthur', '23', 58, 'Seattle')
+# )
+#
+# def good_students(stud):
+#     total = 0
+#     for student in stud:
+#         total += student.mark
+#     avg = total // len(stud)
+#     good_mark_stud = [student.name for student in stud if student.mark >= avg]
+#     print("Students ", ", ".join(good_mark_stud), "learn good this semester!")
+# good_students(students)
+
+# n, m = map(int,input().split())
+# matrix = [ [0]*m for _ in range(n)]
+# # print(matrix)
+# dx, dy, x, y = 0, 1, 0, 0
+#
+# for i in range(1, n*m +1):
+#     matrix[x][y] = i
+#     if matrix[(x+dx) % n][(y+dy) % m]:
+#         dx, dy = dy, -dx
+#     x += dx
+#     y += dy
+#     # print(matrix)
+# # print(matrix)
+# for line in matrix:
+#     print(*(f"{i:<3}" for i in line), sep='')
+
+# s = map(str, input().split())
+# print(*s)
+# lst3 = [[0]*4]*5
+# print(lst3)
+
+string2 = "Hello world the languages of programming are different"
+# print(string2.split())
+#length = map(len, string2.split())
+# print(length)
+# each row should run separately because length is iterator
+# longest = max(map(len, string2.split()))
+# summ = sum(map(len, string2.split()))
+# lst3 = list(map(len, string2.split()))
+# print(longest)
+# print(summ)
+# print(lst3)
+# print(next(length))
+# print(next(length))
+# print(next(length))
+# print(next(length))
+
+# ls = [i**2 for i in range(1, 10000000)]
+# print(ls[8])
+
+# ls2 = map(lambda j: j**2, range(1,10000000))
+#
+# start = datetime.datetime.now()
+# for i in range(len(ls)):
+#     ls[i] *=3
+# print(datetime.datetime.now() - start)
+#
+# start = datetime.datetime.now()
+# ls2 = map(lambda j: j*3, ls2)
+# print(datetime.datetime.now() - start)
+# start = datetime.datetime.now()
+# ls[8]
+# print(datetime.datetime.now() - start)
+# start = datetime.datetime.now()
+# list(ls2)[8]
+# print(datetime.datetime.now() - start)
+# print(ls)
+# print(list(ls2))
+
+# num1 = [1, 2, 3]
+# num2 = [10, 20, 30]
+# num3 = [5, 6, 7]
+# res = map(lambda n1, n2, n3: (n1+n2)*n3, num1, num2, num3)
+# print(tuple(res))
+# actions = ['eat', 'sleep', 'read']
+# res = map(list, actions)
+# print(*res)
+
+# car_dict = {'a': 'Mercedes', 'b': 'BMW', 'c': 'Ferrari', 'd': 'Porsche'}
+# # BMW_2024
+# print(id(car_dict))
+# # car_dict = dict(map(lambda x: (x[0], x[1]+'_2024'), car_dict.items()))
+#
+# for k, v in car_dict.items():
+#     car_dict[k] += '_2024'
+#
+# print(car_dict)
+# print(id(car_dict))
