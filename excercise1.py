@@ -1636,3 +1636,166 @@ string2 = "Hello world the languages of programming are different"
 #
 # print(car_dict)
 # print(id(car_dict))
+
+# 01.09.2024
+
+#lst = [1, [2, 3], [4, [5, [6, 7]]], [[[8], 9], [10]]]
+nestedlist = [1, [2, 3], [4, [5, [6, 7]]], [[[8], 9], [10, 'a']]]
+# # new = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#
+newlist = []
+# def list_unpack(lst):
+#     for i in lst:
+#         if isinstance(i, list):
+#             list_unpack(i)
+#         else:
+#             newlist.append(i)
+# start = time.perf_counter_ns()
+# list_unpack(nestedlist)
+# print(time.perf_counter_ns() - start)
+#
+# print(newlist)
+
+# from collections.abc import Iterable
+#
+# def flat_once(ne_l):
+#     flatten_l = []
+#     for sub in ne_l:
+#         if not isinstance(sub, Iterable):
+#             flatten_l.append(sub)
+#         else:
+#             flatten_l.extend(sub)
+#     return flatten_l
+#
+# # Flat the nested list to flatten list:
+# # nestedlist = [ [1, 2, 3, 4], ["Ten", "Twenty", "Thirty"], [1.1,  1.0E1, 1+2j, 20.55, 3.142]]
+# # Output: flattenlist = [ 1, 2, 3, 4, "Ten", "Twenty", "Thirty", 1.1,  1.0E1, 1+2j, 20.55, 3.142]
+# # nested_list = [ [1, 2, 3], 4, ["Ten", "Twenty", "Thirty"], [1.1,  1.0E1, 1+2j, 20.55, 3.142]]
+# nested_list = [1, [2, 3], [4, [5, [6, 7]]], [[[8], 9], [10]], 'a']
+# flat_list = flat_once(nested_list)
+# for sub in flat_list:
+#     if not isinstance(sub, Iterable):
+#         flat_list = flat_once(flat_list)
+# print(nested_list)
+# print(flat_list)
+
+# lst = [1, [2, 3], [4, [5, [6, 7]]], [[[8], 9], [10]], 'a']
+# def flatten(data):
+#     if data == []:
+#         return []
+#     if type(data[0]) == list:
+#         return flatten(data[0] + flatten(data[1:]))
+#     else:
+#         return [data[0]] + flatten(data[1:])
+#
+# print(flatten(lst))
+
+# def flatten(items):
+#     for it in items:
+#         if isinstance(it, list):
+#             yield from flatten(it)
+#         else:
+#             yield it
+# start = time.perf_counter_ns()
+# x = flatten(lst)
+# print(time.perf_counter_ns() - start)
+# print(list(x))
+
+number = 10
+
+# def fib_gen():
+#     a, b = 0, 1
+#     while True:
+#         yield a
+#         a, b = b, a + b
+#
+# fib = fib_gen()
+# # for i in range(number):
+# #     print(next(fib))
+#
+# print(list(fib)[0:number])
+
+# num = 2468
+# # print(sum(map(int,str(num))))
+# sm = 0
+# while num >=10:
+#     sm += num % 10
+#     num //= 10
+# sm += num
+# print(sm)
+
+# def power(x, y):
+#     if y == 0:
+#         return 1
+#     if y % 2 == 0:
+#         return power(x, y/2) * power(x, y/2)
+#     return x * power(x, y // 2) * power(x, y // 2)
+
+# print(power(4, 5))
+
+# def order(x):
+#     n = 0
+#     while x != 0:
+#         n += 1
+#         x //= 10
+#     return n
+
+# print(order(1273))
+
+# def isArm(x):
+#     n = order(x)
+#     tmp = x
+#     sm = 0
+#     while tmp != 0:
+#         r = tmp % 10
+#         sm = sm + power(r, n)
+#         tmp //= 10
+#     return sm == x
+#
+# # print(isArm(154))
+
+# def isArm(num):
+#     return sum(int(dig)**len(str(num)) for dig in str(num)) == num
+
+# for i in range(10, 10000):
+#     if isArm(i):
+#         print(i)
+
+# Filter
+# x = iter([1,2,3,4])
+# print(*filter(lambda y: y<3,x))
+# print(next(x))
+str1 = ('''This is the text for testing the function that used for finding all the words
+        that are compatible for filter function for lesson purposes''')
+
+# print(*[x for x in str1.split() if x.lower().startswith('t')], sep='\n')
+
+# print(*set(filter(lambda x: x.lower().startswith('t'), str1.split())), sep='\n')
+# fil = filter(lambda x: x.lower().startswith('t'), str1.split())
+# print(next(fil))
+# print(next(fil))
+# ls = [1, 2, 4, 6, 7, 5, 45, 34]
+# print(*filter(lambda x: x % 2 == 0, ls))
+# from prime import is_prime
+# tpl = (i for i in range(1_0))
+# prm = tuple(filter(is_prime, tpl))
+# # print(prm)
+# print(len(prm))
+# res = prm[-1]
+# print(res)
+# from math import sqrt
+# ls = [4, 5, 7, 3, 9, -16]
+# print(list(map(sqrt, filter(lambda x:x >=0, ls))))
+
+# Caesar cipher
+
+# def shift_chr(c):
+#     rot_by = 3
+#     c = c.lower()
+#     alphabet = "abcdefghijklmnopqrstuvwxyz"
+#     rotated_pos = ord(c) - rot_by
+#     if rotated_pos <= ord(alphabet[0]):
+#         return chr(rotated_pos + len(alphabet))
+#     return chr(rotated_pos)
+#
+# print("".join(map(shift_chr,"pb#vhfuhw#pdvvdjh#jrhv#khuh1")))
