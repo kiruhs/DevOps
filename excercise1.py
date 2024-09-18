@@ -1799,3 +1799,279 @@ str1 = ('''This is the text for testing the function that used for finding all t
 #     return chr(rotated_pos)
 #
 # print("".join(map(shift_chr,"pb#vhfuhw#pdvvdjh#jrhv#khuh1")))
+
+# 11.09.2024
+# FIFO - queue ; LIFO - stack
+
+# def is_balanced(s):
+#     stack = []
+#     mapping = {')': '(', ']': '[', '}': '{'}
+#     for char in s:
+#         if char in mapping:
+#             top_element = stack.pop() if stack else '#'
+#             if mapping[char] != top_element:
+#                 return False
+#         elif char not in mapping.values(): #('(', '[', '{'):
+#             continue
+#         else:
+#             stack.append(char)
+#     return not stack
+#
+# print(is_balanced("([{}])"))
+# print(is_balanced("([{5}])"))
+# print(is_balanced("([5,{}])(){}((){}[])"))
+# print(is_balanced("()[()]}"))
+
+
+# str1 = 'Australia'
+# str2 = 'Austria'
+#
+# str3 = 'Labrador'
+# str4 = 'Gibraltar'
+
+# def levenstein(s1, s2):
+#     n, m = len(s1), len(s2)
+#     if n > m:
+#         s1, s2 = s2, s1
+#         n, m = m, n
+#
+#     cur = range(n + 1)
+#     for i in range(1, m+1):
+#         prev, cur = cur, [i]
+
+# lst2 = [2]
+# x = iter(lst2)
+# print(next(x))
+# print(next(x))
+# lst = [i for i in range(1_000_000)]
+#
+# l = len(lst)
+# start = time.perf_counter_ns()
+# k = l
+# print(time.perf_counter_ns() - start)
+#
+# start = time.perf_counter_ns()
+# k = len(lst)
+# print(time.perf_counter_ns() - start)
+
+# board = [' ' for _ in range(9)]
+# # print the board with borders
+# def print_board():
+#     for i in range(3):
+#         print(board[i*3] + '|' + board[i*3+1] + '|' + board[i*3+2])
+#         if i < 2:
+#             print('-+-+-')
+#
+# # winner patterns
+# def check_winner(b, player):
+#     win_cond = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
+#     for cond in win_cond:
+#         if b[cond[0]] == b[cond[1]] == b[cond[2]] == player:
+#             return True
+#     return False
+#
+# # choosing field to put X or 0
+# def player_move(player):
+#     while True:
+#         move = int(input(f"Player {player}, enter the cell number (1-9): ")) - 1
+#         if board[move] == ' ':
+#             board[move] = player  # Error in this row, == instead of =
+#             break
+#         else:
+#             print("This cell already filled. Please try again")
+# cur_p = 'X'
+# for _ in range(9):
+#     print_board()
+#     player_move(cur_p)
+#     if check_winner(board, cur_p):
+#         print_board()
+#         print(f"Player {cur_p} win!")
+#         exit(0)
+#     cur_p = '0' if cur_p == 'X' else 'X'
+# print_board()
+# print("Draw!")
+
+
+# iter, map, filter, zip
+
+
+import itertools
+
+# starmap()
+# print(list(map(pow, (2, 7, 3), (4, 3, 3))))
+
+# print((itertools.starmap(pow, [(2,7), (4,3), (3, 3)])))
+
+# nestedlist = [ [1, 2, 3, 4], ["Ten", "Twenty", ["Thirty"]], [1.1,  1.0E1, 1+2j, 20.55, 3.142]]
+# print(list(itertools.chain(*nestedlist)))
+
+# dropwhile
+# lst = [1, 3, -4, -6, 3, -8]
+#
+# drop = itertools.dropwhile(lambda x: x > 0, lst)
+# print(list(drop))
+
+# cycle
+
+# tpl = ({1,2},(3,4), "Hello", True)
+# # res = itertools.cycle(lst)
+# #
+# # for i in range(100):
+# #     print(next(res), end=', ')
+#
+# rep = itertools.repeat(tpl, 5)
+# print(list(rep))
+
+# from functools import reduce
+# # reduce
+# lis = [1, 3, 5, 6, 7, 2]
+# lis2 = [1, 3, -5, 62, 17, 2]
+#
+# res2 = reduce(lambda a, b: a+b, lis2)
+# res = reduce(lambda a, b: a+b, lis, res2)
+# print(res)
+# print(type(res))
+
+# print(sum(lis))
+#
+# 15.09.2024
+
+# lst = [i for i in range(1_000_000)]
+# l = len(lst)
+# start = time.perf_counter_ns()
+# for i in range(len(lst)):
+#     j = i
+# print(time.perf_counter_ns() - start)
+# start = time.perf_counter_ns()
+# for i in range(l):
+#     j = i
+# print(time.perf_counter_ns() - start)
+
+# map(function, iterable,...)
+lst = [1, 2, 4, 6, 5,-3, 1]
+lst2 = [3, 5, 0, 4]
+#
+# def my_map(func, *seq):
+#     if not seq:
+#         raise TypeError('Mapper should have at least two parameters')
+#     iters = [iter(s) for s in seq]
+#     try:
+#         while True:
+#             yield func(*[next(it) for it in iters])
+#     except StopIteration:
+#         pass
+# m = my_map(lambda a: a**2, lst)
+# x = my_map(lambda a, b: pow(a,b), lst, lst2)
+# print(list(m))
+# print(list(x))
+
+# def reduce(function, iterable, initializer=None):
+#     it = iter(iterable)
+#     if initializer is None:
+#         value = next(it)
+#     else:
+#         value = initializer
+#     for element in it:
+#         value = function(value, element)
+#     return value
+#
+# # )
+# # print(functools.reduce(lambda x, y: x*y,lst, 3))
+#print(reduce(lambda x, y: x*y,lst, 3)
+# lst = [1, 8, 27, 30, 61, 25, 125, 64]
+# #
+# # check = reduce(lambda x,y: x+y if math.sqrt(y) == int(math.sqrt(y)) else x, lst)
+# # print(check)
+#
+# # print(functools.reduce(lambda x, y: x+y, [], 0))
+# print(min(lst))
+# minimal = functools.reduce(lambda x,y: x if x < y else y, lst)
+# print(minimal)
+
+# str = "Hello world, the live is beautiful"
+# length = 0
+# # for i in str.split():
+# #
+# s = max(map(len,str.split()))
+# #     if len(i) > length:
+# #         length = len(i)
+# #         max = i
+# print(s)
+#
+# maxim = functools.reduce(lambda a,b: a if len(a) > len(b) else b, str.split(','))
+# print(len(maxim))
+
+# lst = [1, 8, 27, 30, 61, 25, 125, 64]
+# # print(functools.reduce(lambda x, y: x+y,lst))
+#
+# import operator
+# print(functools.reduce(operator.add, lst))
+#
+# res = itertools.accumulate(lst, operator.add)
+# print(*res)
+# r = 20
+# l1 = map(pow,range(r),itertools.repeat(2))
+# for i in l1:
+#     print(i, end=" ")
+
+# inter = itertools.repeat(2)
+# print(type(inter))
+# for i in inter:
+#     print(i)
+
+# tpl = ({1,2},(3,4), "Hello", True)
+# res = itertools.repeat(tpl)
+# res2 = itertools.cycle(tpl)
+# for i in range(10):
+#     print(next(res), end=', ')
+
+# for i in range(10):
+#     print(next(res2), end=', ')
+
+# abcd
+
+# print(*itertools.combinations('abcd', 2))
+# print(*itertools.combinations_with_replacement('abcd', 2))
+# print(*itertools.permutations('abcd', 2))
+
+# print(*zip('abcd', '12'))
+# print(*itertools.zip_longest('abcd', '12'))
+
+# sl = itertools.islice('abcdefgh',4)
+# print(*sl)
+#
+# import statistics
+#
+# lst = [1, 8, 27, 30, 61, 25, 125, 64]
+# print(statistics.mean(lst))   # average
+
+# file handling
+
+# file = open("c:/tmp/qqq.txt")  # w - write , a - append
+# text = file.read()
+# file.close()
+# print(file.closed)
+# print(text)
+
+# with open("c:/tmp/qqq.txt") as file:
+#     text = file.read()
+
+# print(file.closed)
+
+# for each in text:
+#     print(each)
+
+# with open("c:/tmp/qqq.txt") as file:
+    # text = file.read(5)
+    # text = file.read(5)
+    # print(file.read())
+    # file.seek(0)
+    # text = file.read(5)
+    # print(file.tell())
+    # print(file.readline(5), end='')
+    # print(file.readline(), end='')
+    # print(file.readline(), end='')
+    # print(file.readline(), end='')
+    # print(file.readline(), end='')
+    # print(file.readlines())
+# print(text)
