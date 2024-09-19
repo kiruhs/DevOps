@@ -2075,3 +2075,141 @@ lst2 = [3, 5, 0, 4]
     # print(file.readline(), end='')
     # print(file.readlines())
 # print(text)
+
+# 18.09.2024
+# lst5 = [1,4,7,9,4,9,9,]
+# lst6 = [54,26,93,17,77,31,44,55,20]
+# lst4 = [90, 64, 34, 25, 12, 22, 11, -6, 23]
+# def quick_sort(lst):
+#     if len(lst) <= 1:
+#         return lst
+#     pivot = lst[len(lst) // 2]
+#     left = [x for x in lst if x < pivot]
+#     right = [x for x in lst if x > pivot]
+#     middle = [x for x in lst if x == pivot]
+#     return quick_sort(left) + middle + quick_sort(right)
+#
+# # sort = quick_sort(lst4)
+# # print(sort)
+#
+#
+# def bubbleSort(arr):
+#     n = len(arr)
+#     for i in range(n):
+#         # Last i elements are already in place
+#         for j in range(0, n - i - 1):
+#             if arr[j] > arr[j + 1]:
+#                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+#     return arr
+# sort = bubbleSort(lst4)
+# # print(sort)
+# import random
+# lst = []
+# for _ in range(10_000):
+#     lst.append(random.randint(1,9_000))
+# start = time.perf_counter_ns()
+# x = bubbleSort(lst)
+# print(time.perf_counter_ns() - start)
+#
+# start = time.perf_counter_ns()
+# y = quick_sort(lst)
+# print(time.perf_counter_ns() - start)
+
+# def collatz(n):
+#     yield n
+#     while n != 1:
+#         n = n / 2 if n % 2 == 0 else 3 * n + 1
+#         yield int(n)
+#
+# # print(*collatz(19))
+# dct = {}
+# for i in range(2,50001):
+#     l = list(collatz(i))
+#     dct[len(l)] = i
+#
+#
+# print(f" the number {dct[max(dct)]} has {max(dct)} elements in Collatz iterable")
+
+# l = ('This is first line\n', 'This is second line\n', 'This is third line\n')
+#
+# with open("out.txt", 'w+') as file:
+#     file.write("Hello1\n")
+#     file.write("Hello2\n")
+#     file.writelines(l)
+#     file.seek(0)
+#
+#     print(file.read())
+
+# from pathlib import Path
+# directory = Path("c:/tmp/")
+# # print(directory)
+# # print(directory.is_dir())
+# directory_iter = directory.iterdir()
+# # print(directory_iter)
+# # print(next(directory_iter))
+# text = []
+# for path in directory_iter:
+#     if path.is_file() and path.suffix == '.txt':
+#         text.append(path.read_text(errors='ignore'))
+# for txt in text:
+#     print(txt)
+
+
+# with open("c:/tmp/qqq.txt") as file:
+#     print(*file.readlines()[1:6], sep='')
+
+path = "c:/tmp/tmp/hamlet.txt"
+# with open(path, encoding='utf-8') as file:
+#     f = file.read()
+# print(f.__sizeof__())
+
+# def process_large_file(file_path):
+#     with open(file_path, encoding='utf-8') as file:
+#         for line in file:
+#             yield line
+#         # print(file.read())
+#
+#
+# large_file = process_large_file(path)
+# print(large_file.__sizeof__())
+# # while input() == '':
+# #     for i in range(10):
+# #         print(next(large_file))
+#
+# my_json = {'name': 'Alexander', 'address': {'city':'Ashdod', 'quarter': 'Yud Alef','Street': 'Kineret'}, 'teacher': 'DevOps'}
+#
+#
+# import json
+# with open("c:/tmp/example.json") as js:
+#     js_file = json.load(js)
+    # print(type(js_file))
+    # print(js_file["widget"]["window"])
+    # print(type(js.read()))
+
+# j_data = json.dumps(my_json,indent=None)
+# print(j_data)
+
+import os
+# if not os.path.isdir("new_dir"):
+#     os.mkdir("new_dir")
+# else:
+#     print("This directory already exists")
+
+# print(os.system("dir c:\\tmp"))
+# print(os.getcwd())
+# os.chdir("c:\\tmp")
+# print(os.getcwd())
+ip = '8.8.8.8'
+pipe = os.popen("ping {ip}:")
+# print(pipe)
+pull = pipe.read()
+count = 0
+for i in pull.split():
+    if i == ip:
+        count += 1
+if count == 4:
+    print("Ping is answered fully")
+elif count == 0:
+    print("Ping was not answered at all")
+else:
+    print(f"ping was answered {count} times")
