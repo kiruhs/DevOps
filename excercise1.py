@@ -2213,3 +2213,236 @@ elif count == 0:
     print("Ping was not answered at all")
 else:
     print(f"ping was answered {count} times")
+##########################################
+# from exercise2 import mergeSort
+# lst = [ 5, -8, -56, 0, 45, 90, 34]
+# mergeSort(lst)
+# print(lst)
+
+# import shutil
+#
+# tmp = "c:/tmp/qqq.txt"
+# print(os.path.isfile(tmp))
+
+# os.rmdir("c:/tmp/qqqqq.txt/")
+# if os.path.exists("c:/tmp/qqqqq.txt/"):
+#     shutil.rmtree("c:/tmp/qqqqq.txt/") # cam remove the folder including files and subfolders
+# os.chdir("c:/tmp/")
+# print(os.getcwd())
+# # os.mkdir("qq")
+# os.chdir("qq")
+# shutil.rmtree("c:/tmp/qq")
+
+# os.chdir("c:/tmp/")
+# # for i in range(1,11):
+# #     with open(f"devops_{i}.txt", 'w') as f:
+# #         f.write(f"This is file number {i}, that was created by python program")
+#
+# for i in range(1,11):
+#     with open(f"devops_{i}.txt") as f:
+#         print(f.read())
+# print(os.system('dir'))
+
+# from pathlib import Path
+# PATH = "c:/tmp/"
+# os.chdir(PATH)
+# current_directory = Path('.')
+#
+# cur = current_directory.iterdir()
+# for i in range(11):
+#     print(next(cur))
+
+# print(os.path.getsize("qqq.txt"))
+#
+# PATH = os.path.expanduser("~/test")
+# files = os.listdir(PATH)
+# sizes = [os.path.getsize(os.path.join(PATH,s)) for s in files if os.path.isfile(os.path.join(PATH,s))]
+# print(sum(sizes))
+
+# (lambda sizes: print(f"{sum(sizes)/1024/1024:.2f} MB") if sum(sizes) > 1024*1024 else
+#     (print(f"{sum(sizes)/1024:.2f} KB") if sum(sizes) > 1024 else print(sum(sizes)))) (sizes)
+
+# def count_symbols(_str):
+#     symbols = {}
+#     # Iterate through whole string and count each symbol
+#     for char in _str:
+#         if char in symbols:
+#             symbols[char] += 1
+#         else:
+#             symbols[char] = 1
+#     return symbols
+#
+def count_words(_str):
+    words = [wrd for wrd in _str.split()]
+    print(len(words))
+
+
+# with open("c:/tmp/tmp/war_and_peace.html", encoding='utf-8') as book:
+#     content = book.read()
+#     print(count_symbols(content))
+#     count_words(content)
+#
+# letters = count_symbols(content)
+# print(letters)
+
+# if __name__ == '__main__':
+#     main(count_words())
+
+# word = []
+# with open("c:/tmp/emails.txt") as mail:
+#     data = mail.read().split()
+#     # @
+# # import re
+# for i in data:
+#     if '.' in i and "@" in i:
+#
+#         word.append(i)
+# print(word)
+#
+# def merge_files_using_zip(file1, file2, output):
+#     with open(file1) as f1, open(file2) as f2:
+#         f1_lines = iter(f1.readlines())
+#         f2_lines = iter(f2.readlines())
+#
+#     with open(output, 'w') as o:
+#         for l1, l2 in itertools.zip_longest(f1_lines, f2_lines, fillvalue="\n"):
+#             o.write(l1)
+#             o.write(l2)
+#         # o.write('\n')
+#         # for l1 in f1_lines:
+#         #     o.write(l1)
+#         # for l2 in f2_lines:
+#         #     o.write(l2)
+#     # for i in f1_lines:
+#     #     print(i)
+# merge_files_using_zip("c:/tmp/qqq.txt", "c:/tmp/prices.txt", "output.txt")
+# with open("output.txt") as out:
+#     print(out.read())
+
+# Exceptions handling
+# a = 3
+# print("Good evening!")
+# b = input("Enter the number")
+#
+# try:
+#     print(a/b)
+# except TypeError:
+#     print("Division by zero not permitted")
+# print("Hello")
+
+
+# b = int(float(input("Enter the number ")))
+# a = int(b)
+# print("good guy, it is a number! ", b)
+
+# try:
+#     b = int(float(input("Enter the number ")))
+#     print("good guy, it is a number!")
+# except ValueError:
+#     print("You should input the number")
+
+# try:
+#     with open("kuku.txt") as file:
+#         print(file.read())
+# except FileNotFoundError:
+#     with open("kuku.txt", 'w') as f:
+#         pass
+#     with open("kuku.txt") as file:
+#         print(file.read())
+#     print("This file just created")
+#
+# try:
+#     with open("kuku.txt", 'w') as f:
+#         f.read()
+# except io.UnsupportedOperation:
+#     pass
+# try:
+#     print(l)
+# except NameError:
+#     print("define the variable firstly")
+
+# try:
+#     a = int(input("enter first number to divide "))
+#     b = int(input("enter second number to divide "))
+#     c = a / b
+#     print(c)
+# except ValueError:
+#     print("Invalid values")
+# except ZeroDivisionError:
+#     print("You shouldn't divide by zero")
+
+#
+# lst = [1, 3, 5, 6]
+# def func(l):
+#     x = 5
+#     p = 7
+#     try:
+#         l[3] / 1
+#     except ZeroDivisionError:
+#         try:
+#             for i in range(len(l)+1):
+#                 l[i] +=1
+#                 return l
+#         except IndexError:
+#             print("you reached the end of the list")
+#             return l
+#     finally:
+#         print("hello world")
+#
+# print(func(lst))
+
+# Exception propagation
+
+# def func1():
+#     try:
+#         x = 4 / 0
+#     except ZeroDivisionError:
+#         print("in func1")
+#
+# def func2():
+#     try:
+#         func1()
+#     except ZeroDivisionError:
+#         print("caught in func2")
+#
+# print("Before functions")
+# try:
+#     func2()
+#     print("The exception didn't get to the main block")
+# except ZeroDivisionError:
+#     print("The exception caught in main program")
+# print("after functions")
+# import math
+# while True:
+#     try:
+#         num = int(input("Enter tne positive only number for square root calculation"))
+#         if num < 0:
+#             raise ValueError("this number is negative, try again")
+#         else:
+#             break
+#     except ValueError as somename:
+#         print(somename)
+
+#
+#
+# print(math.sqrt(num))
+
+
+# try:
+# 3 / 0
+# except ZeroDivisionError as e:
+#     print(e)
+# try:
+#     input()
+# except KeyboardInterrupt:
+#     print("the program was interrupted by user")
+#
+# print("Hello")
+# time.sleep(5)
+# print("after 5 second we still on the game")
+
+try:
+    5 / 0
+except ZeroDivisionError:
+    pass
+print('Life is beautiful')
