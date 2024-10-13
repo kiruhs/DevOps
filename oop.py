@@ -106,3 +106,131 @@ v2 = Vector(ls2)
 # print(Vector.__class__)
 print(list.mro())
 print(Vector.mro())
+
+# 09.10.2024
+
+# Vector([2])
+# # v2(ls2)
+# print(callable(Vector))
+# print(callable(v2))
+
+# class Base1:
+#     b = "Public"
+#     def __init__(self):
+#         self.a = "It is public"
+#         self._b = "It is protected"
+#         self.__c = "It is private"
+        # self.d = self.__c
+        # print(self.__c)
+# class Derived(Base1):
+#     def __init__(self):
+#         super().__init__()
+#         print(self._Base1__c)
+# #         # print()
+#
+# d1 = Derived()
+# b1 = Base1()
+# # print(b1.d)
+# # b1.d = "Kuku"
+# print(b1._b)
+# # print(d1.a)
+# b1._b = "And now it is fully public"
+# print(b1._b)
+
+# print(b1.__c)
+
+# class Cat:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __str__(self):
+#         return f"it is {self.name}"
+#
+#     def __repr__(self):  # for debugging mode
+#         return f"{self.__class__}"
+#
+# cat = Cat('Micky')
+# print(cat)
+# print(cat.__dict__)
+# print(repr(cat))
+
+# class Point:
+#     def __init__(self, *args):
+#         self.__args = args
+#
+#     def __len__(self):
+#         return len(self.__args)
+#
+#     def __abs__(self):
+#         return list(map(abs, self.__args))
+#
+# it = [1, -2, 5, True, -100.5]
+# p = Point(*it)
+# print(len(p))
+# print(abs(p))
+
+# s = 'five'
+# print(s*5) # '4five5'
+
+# class Letnum:
+#     "This class should be able to concatenate strings to integer and vice versa by + operator"
+#     def __init__(self, symbol):
+#         self.symbol = symbol
+#
+#     def __str__(self):
+#         return f"{self.symbol}"
+#
+#     def __add__(self, other):  # +
+#         let = str(self.symbol) + str(other)
+#         return Letnum(let)
+#
+#     def __radd__(self, other):
+#         let = str(other) + str(self.symbol)
+#         return Letnum(let)
+#
+# st = Letnum(s) # 'five' + 5  4+5=45
+#
+# st2 = st+5
+# print(st2)
+# st3 = 4+st2+7+4+4+"hello"+[3,4,5,6]+{3:5}+True
+# print(st3)
+# help(Letnum)
+
+# ================================================================================================
+# lst = {3, 8, -8,"hello", 0, -17, 5, 'a'} # <<3, 8, -8, 0, -17, 5>>
+#
+# class My_arr(list):
+#     "This class inherits from list and sorts all elements and more.."
+#
+#     def __init__(self, it):
+#         a = []
+#         for i in it:
+#             if isinstance(i, (int,float,bool)):
+#                 a.append(i)
+#         it = a
+#         super().__init__(sorted(it))
+#         self.index = 0
+#
+#     def __str__(self):
+#         return f"<<{', '.join(str(item) for item in self)}>>"
+#
+#     def append(self, __object):
+#         super().append(__object)
+#         self.sort()
+#
+#
+#
+#     def __getitem__(self, item):
+#         it = super().__getitem__(item)
+#         if isinstance(item, slice):
+#             return f"<<{', '.join(str(i) for i in it)}>>"
+#         return it
+#
+# new_list = My_arr(lst)
+# new_list2 = My_arr(lst)
+# print(new_list == new_list2)
+# print(new_list)
+# # print(My_arr.mro())
+# new_list.append(-100)
+# print(new_list)
+# print(new_list[2:4])
