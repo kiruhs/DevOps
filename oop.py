@@ -91,21 +91,21 @@ list.__dict__
 # print(d.get_coord())
 
 import math
-class Vector(list):
-    def __str__(self):
-        return " ".join(map(str, self))
+# class Vector(list):
+#     def __str__(self):
+#         return " ".join(map(str, self))
 
-v = Vector([2,5,8,-3])
-print(v)
+# v = Vector([2,5,8,-3])
+# print(v)
 
-ls2 = map(math.sqrt, range(10))
-v2 = Vector(ls2)
+# ls2 = map(math.sqrt, range(10))
+# v2 = Vector(ls2)
 # print(v2[3:6])
 #
 # print(list.__class__)
 # print(Vector.__class__)
-print(list.mro())
-print(Vector.mro())
+# print(list.mro())
+# print(Vector.mro())
 
 # 09.10.2024
 
@@ -196,41 +196,166 @@ print(Vector.mro())
 # print(st3)
 # help(Letnum)
 
-# ================================================================================================
-# lst = {3, 8, -8,"hello", 0, -17, 5, 'a'} # <<3, 8, -8, 0, -17, 5>>
+# Decorators
+# 1 - Function can be used as object and called by another name
+# def func1(text):
+#     return text.upper()
 #
-# class My_arr(list):
-#     "This class inherits from list and sorts all elements and more.."
+# print(func1("Hello"))
 #
-#     def __init__(self, it):
-#         a = []
-#         for i in it:
-#             if isinstance(i, (int,float,bool)):
-#                 a.append(i)
-#         it = a
-#         super().__init__(sorted(it))
-#         self.index = 0
+# name = func1
+# print(name("World"))
+
+# 2 - Passing the function as an argument
+
+# def func1(text):
+#     return text.upper()
 #
-#     def __str__(self):
-#         return f"<<{', '.join(str(item) for item in self)}>>"
+# def func2(text):
+#     return text.lower()
 #
-#     def append(self, __object):
-#         super().append(__object)
-#         self.sort()
+# def greet(name):
+#     greeting = name("Hi, I am created by a function that passed as an argument")
+#     print(greeting)
 #
+# greet(func1)
+# greet(func2)
+
+# def make_adder(x):
+#     def adder(y):
+#         return x + y
+#     return adder
 #
+# add_45 = make_adder(45)
+# print(add_45(35))
+# print((make_adder(45))(35))
+
+# def func():
+#     print("How are you?")
+
+# func()
+
+# def mydecorator(fn):
+#     def inner_func():
+#         fn()
+#         print("How are you?")
+#     return inner_func
 #
-#     def __getitem__(self, item):
-#         it = super().__getitem__(item)
-#         if isinstance(item, slice):
-#             return f"<<{', '.join(str(i) for i in it)}>>"
-#         return it
+# @mydecorator
+# def greet():
+#     print("Hello! ", end='')
 #
-# new_list = My_arr(lst)
-# new_list2 = My_arr(lst)
-# print(new_list == new_list2)
-# print(new_list)
-# # print(My_arr.mro())
-# new_list.append(-100)
-# print(new_list)
-# print(new_list[2:4])
+# greet()
+
+# def hello_decorator(func):
+#
+#     # inner function is a wrapper function in which the argument is called
+#     def inner():
+#         print("Hello, this is before function execution")
+#         # calling the actual function now
+#         func()
+#         print("This is after function execution")
+#     return inner
+#
+# def function_to_be_used_outside():
+#     print("This is inside the the function!!")
+#
+# function_to_be_used_outside = hello_decorator(function_to_be_used_outside)
+#
+# function_to_be_used_outside()
+
+# Chaining Decorators
+
+# def decor1(func):
+#     def inner():
+#         x = func()
+#         return x * x
+#     return inner
+#
+# def decor2(func):
+#     def inner():
+#         x = func()
+#         return 2 * x
+#     return inner
+#
+# @decor2
+# @decor1
+# def num():
+#     return 10
+# print(num())
+# # print(decor1(decor2(num())))
+
+# class Rectangle:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     @property
+#     def area(self):
+#         return self.a * self.b
+#
+# rect = Rectangle(4,5)
+# print(rect.area)
+
+# class Point:
+#     MAX_COORD = 100
+#     MIN_COORD = 0
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def set_coord(self, x, y):
+#         if self.MIN_COORD <= x <= self.MAX_COORD:
+#             self.x = x
+#             self.y = y
+#
+#     @classmethod
+#     def __set_bound(cls, left):
+#         cls.MIN_COORD = left
+#     @classmethod
+#     def root_setter(cls, min):
+#         cls.min = min
+#         cls.MIN_COORD = cls.min
+#
+#     def __getattribute__(self, item):
+#         # print("You tried to get some object attribute")
+#         try:
+#             if item == '__dict__':
+#                 raise ValueError("no access")
+#         except ValueError:
+#             print("Sorry, this attribute is not accessible")
+#         else:
+#             return object.__getattribute__(self,item)
+# pt1 = Point(10,20)
+# pt2 = Point(50,70)
+# pt1.root_setter(-50)
+# print(pt1.MIN_COORD)
+# pt1.set_coord(40,50)
+# print(Point.MIN_COORD)
+# print(pt1.__dict__)
+# # print(Point.__dict__)
+# print(pt2.MIN_COORD)
+
+class FibonacciIterator:
+    def __init__(self, stop=10):
+        self.stop = stop
+        self.index = 0
+        self.current = 0
+        self.next = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index < self.stop:
+            self.index += 1
+            fib_num = self.current
+            self.current, self.next = self.next, self.current + self.next
+            return fib_num
+        else:
+            raise StopIteration
+fi = FibonacciIterator(15)
+for fib_num in fi:
+    print(fib_num)
+# print(type(fi))
