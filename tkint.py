@@ -87,7 +87,18 @@ from tkinter.constants import DISABLED, RIGHT, LEFT, BOTTOM, TOP
 # combobox
 
 root = tk.Tk()
+root.geometry("200x100")
 my_str_var = tk.StringVar()
 my_combobox = ttk.Combobox(root, textvariable=my_str_var, values=["JavaScript", "Linux", "Python"])
 my_combobox.pack()
+
+def selected(event):
+    # получаем выделенный элемент
+    selection = my_combobox.get()
+    # print(selection)
+    label["text"] = f"вы выбрали: {selection}"
+
+label = tk.Label()
+label.pack()
+my_combobox.bind("<<ComboboxSelected>>",selected)
 root.mainloop()
